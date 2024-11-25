@@ -62,7 +62,7 @@ public class SomParticle {
      * @param owner パーティクルの所有者
      */
     public SomParticle(Color color, SomEntity owner) {
-        this.particle = Particle.REDSTONE;
+        this.particle = Particle.DUST;
         options = new Particle.DustOptions(color, 1);
         this.owner = owner;
     }
@@ -258,8 +258,8 @@ public class SomParticle {
 
                 if (playerData.isBE()) {
                     switch (particle) {
-                        case FIREWORKS_SPARK -> {
-                            particle = Particle.REDSTONE;
+                        case Particle.FIREWORK -> {
+                            particle = Particle.DUST;
                             options = new Particle.DustOptions(Color.WHITE, 1);
                         }
                     }

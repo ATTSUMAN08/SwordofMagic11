@@ -34,7 +34,7 @@ public class FlameFloor extends SomSkill {
         double percent = parameter.getParam(ParamType.Percent);
         SomParticle particle = new SomParticle(Particle.FLAME, owner);
         SomParticle particle2 = new SomParticle(Particle.FLAME, owner).setLower(radius);
-        SomParticle particle3 = new SomParticle(Particle.EXPLOSION_NORMAL, owner).setLower(radius);
+        SomParticle particle3 = new SomParticle(Particle.EXPLOSION, owner).setLower(radius);
         SomRay ray = SomRay.rayLocationBlock(owner, range, true);
         CustomLocation center = ray.getOriginPosition().back(0.1).lower();
         particle.line(owner.getHandLocation(), center);

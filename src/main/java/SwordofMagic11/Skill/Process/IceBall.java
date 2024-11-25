@@ -32,7 +32,7 @@ public class IceBall extends SomSkill {
         double range = parameter.getParam(ParamType.Range);
         double radius = parameter.getParam(ParamType.Radius);
         double percent = parameter.getParam(ParamType.Percent);
-        SomParticle particle = new SomParticle(Particle.SNOWBALL, owner);
+        SomParticle particle = new SomParticle(Particle.ITEM_SNOWBALL, owner);
         SomRay ray = SomRay.rayLocationEntity(owner, range, 0.5, owner.enemies(), false);
         CustomLocation center = ray.getOriginPosition();
         if (ray.isHitEntity()) center.add(owner.getDirection().multiply(radius / 2));

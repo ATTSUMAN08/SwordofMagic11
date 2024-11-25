@@ -113,7 +113,7 @@ public class Oziek extends CustomData {
 
         SomParticle preParticle = new SomParticle(Color.RED, this);
         SomParticle signParticle = new SomParticle(Particle.CAMPFIRE_SIGNAL_SMOKE, this);
-        SomParticle atkParticle = new SomParticle(Particle.SMOKE_NORMAL, this);
+        SomParticle atkParticle = new SomParticle(Particle.SMOKE, this);
 
         CustomLocation location1 = lanesS[index][0];
         CustomLocation location2 = lanesS[index][1];

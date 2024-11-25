@@ -459,7 +459,7 @@ public abstract class SomEntity implements TaskOwner {
      * @param duration 効果時間 (tick)
      */
     public void slow(int level, int duration) {
-        addPotionEffect(new PotionEffect(PotionEffectType.SLOW, duration, level, false, false));
+        addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, duration, level, false, false));
     }
 
     /**

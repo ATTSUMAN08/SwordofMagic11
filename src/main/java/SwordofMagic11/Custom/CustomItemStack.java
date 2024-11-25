@@ -4,14 +4,13 @@ import SwordofMagic11.Player.PlayerData;
 import SwordofMagic11.SomCore;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.block.banner.Pattern;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.block.data.Levelled;
-import org.bukkit.block.data.type.Light;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.*;
@@ -48,7 +47,7 @@ public class CustomItemStack extends ItemStack implements Cloneable {
         setType(icon);
         ItemMeta meta = getItemMeta();
         meta.setUnbreakable(true);
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(uuid, "generic.attackDamage", 4, AttributeModifier.Operation.ADD_NUMBER));
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(NamespacedKey.fromString(uuid.toString()), 4, AttributeModifier.Operation.ADD_NUMBER));
         for (ItemFlag flag : ItemFlag.values()) {
             meta.addItemFlags(flag);
         }
@@ -156,7 +155,7 @@ public class CustomItemStack extends ItemStack implements Cloneable {
     public CustomItemStack setGlowing(boolean bool) {
         ItemMeta meta = getItemMeta();
         if (bool) {
-            meta.addEnchant(Enchantment.DURABILITY, 0, true);
+            meta.addEnchant(Enchantment.UNBREAKING, 0, true);
         }
         setItemMeta(meta);
         return this;

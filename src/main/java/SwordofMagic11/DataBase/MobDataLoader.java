@@ -10,10 +10,7 @@ import SwordofMagic11.Player.Memorial.MemorialData;
 import SwordofMagic11.StatusType;
 import me.libraryaddict.disguise.disguisetypes.*;
 import me.libraryaddict.disguise.disguisetypes.watchers.*;
-import org.bukkit.ChatColor;
-import org.bukkit.Color;
-import org.bukkit.DyeColor;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.*;
@@ -74,7 +71,7 @@ public class MobDataLoader {
                         switch (disguise.getType()) {
                             case OCELOT -> {
                                 CatWatcher customWatcher = new CatWatcher(disguise);
-                                customWatcher.setType(Cat.Type.valueOf(data.getString("Disguise.CatType", "BLACK")));
+                                customWatcher.setType(Registry.CAT_VARIANT.getOrThrow(NamespacedKey.minecraft(data.getString("Disguise.CatType", "BLACK").toLowerCase(Locale.ROOT))));
                                 disguise.setWatcher(customWatcher);
                             }
                             case FOX -> {
@@ -112,8 +109,8 @@ public class MobDataLoader {
                             }
                             case ZOMBIE_VILLAGER -> {
                                 ZombieVillagerWatcher customWatcher = new ZombieVillagerWatcher(disguise);
-                                customWatcher.setBiome(Villager.Type.valueOf(data.getString("Disguise.VillagerType", "PLAINS")));
-                                customWatcher.setProfession(Villager.Profession.valueOf(data.getString("Profession", "ARMORER")));
+                                customWatcher.setBiome(Registry.VILLAGER_TYPE.getOrThrow(NamespacedKey.minecraft(data.getString("Disguise.VillagerType", "PLAINS").toLowerCase(Locale.ROOT))));
+                                customWatcher.setProfession(Registry.VILLAGER_PROFESSION.getOrThrow(NamespacedKey.minecraft(data.getString("Profession", "ARMORER").toLowerCase(Locale.ROOT))));
                                 disguise.setWatcher(customWatcher);
                             }
                             case SNOWMAN -> {
