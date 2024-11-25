@@ -1,0 +1,31 @@
+[versions]
+kotlin = "2.1.0-RC2"
+shadow = "8.3.5"
+pluginYml = "0.6.0"
+
+paperApi = "1.21.1-R0.1-SNAPSHOT"
+protocolLib = "5.1.0"
+libsDisguises = "10.0.44"
+nuVotifier = "2.7.2"
+jAsyncSQL = "2.2.4"
+commonsIo = "2.18.0"
+commonsCodec = "1.17.1"
+gson = "2.11.0"
+kotlinSerializationJson = "1.7.3"
+
+[plugins]
+kotlin =  { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+pluginYml = { id = "net.minecrell.plugin-yml.bukkit", version.ref = "pluginYml" }
+
+[libraries]
+paperApi = { group = "io.papermc.paper", name = "paper-api", version.ref = "paperApi" }
+protocolLib = { group = "com.comphenix.protocol", name = "ProtocolLib", version.ref = "protocolLib" }
+libsDisguises = { group = "LibsDisguises", name = "LibsDisguises", version.ref = "libsDisguises" }
+nuVotifier = { group = "com.github.NuVotifier", name = "NuVotifier", version.ref = "nuVotifier" }
+jAsyncMySQL = { group = "com.github.jasync-sql", name = "jasync-mysql", version.ref = "jAsyncSQL" }
+commonsIo = { group = "commons-io", name = "commons-io", version.ref = "commonsIo" }
+commonsCodec = { group = "commons-codec", name = "commons-codec", version.ref = "commonsCodec" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+kotlinSerializationJson = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerializationJson" }
